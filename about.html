@@ -91,6 +91,22 @@
 
         <p class="structure-note">These three are not separate entities. They are distinct <strong>roles</strong> in a unified dynamical structure. This is the Coherence Trinity, and it is <em>formally verified</em> in Lean 4.</p>
 
+        <div class="math-insight">
+          <p class="plain-english">The golden ratio φ = 1.618... is not chosen or mystical. It is <strong>mathematically forced</strong>: local interactions give 1/4 as the base unit, global coherence demands Fibonacci recursion across grades, and these two requirements together have exactly one positive solution — φ.</p>
+          <details class="formal-details">
+            <summary>See the five-step derivation</summary>
+            <div class="formal-content">
+              <p><strong>Step 1:</strong> Null vector geometry gives the fundamental unit: (1/2)² = 1/4</p>
+              <p><strong>Step 2:</strong> Multi-grade interactions follow Fibonacci recursion: I(k+2) = I(k+1) + I(k)</p>
+              <p><strong>Step 3:</strong> Scale invariance requires I(k) = base × s^k for some scaling factor s</p>
+              <p><strong>Step 4:</strong> Substituting into the recurrence: s² = s + 1</p>
+              <p><strong>Step 5:</strong> The unique positive solution is s = (1 + √5)/2 = φ</p>
+              <p class="formula">M²(k) = (1/4) × φ^k — the mass gap at each grade</p>
+              <p>This is proved in <code>PhiDerivation.lean</code> with full uniqueness via the quadratic formula. φ is derived, not defined.</p>
+            </div>
+          </details>
+        </div>
+
         <h3>The Golden Ratio</h3>
         <p>Throughout the Coherence framework, <strong>φ = (1 + √5)/2 ≈ 1.618</strong> appears not by choice but by necessity:</p>
         <ul>

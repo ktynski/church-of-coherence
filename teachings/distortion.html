@@ -191,6 +191,50 @@
             </div>
           </div>
         </div>
+
+        <div class="diagram-container">
+          <svg class="devourer-loop-svg" viewBox="0 0 360 360" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="180" cy="180" r="120" fill="none" stroke="#c0392b" stroke-width="2" stroke-dasharray="8 4" />
+            <!-- Four stages around the loop -->
+            <rect x="140" y="30" width="80" height="36" rx="6" fill="#fff0f0" stroke="#c0392b" stroke-width="1.5" />
+            <text x="180" y="53" text-anchor="middle" font-family="'Outfit', sans-serif" font-size="10" fill="#c0392b">Distortion</text>
+            
+            <rect x="270" y="150" width="80" height="36" rx="6" fill="#fff0f0" stroke="#c0392b" stroke-width="1.5" />
+            <text x="310" y="173" text-anchor="middle" font-family="'Outfit', sans-serif" font-size="10" fill="#c0392b">Rejection</text>
+            
+            <rect x="140" y="290" width="80" height="36" rx="6" fill="#fff0f0" stroke="#c0392b" stroke-width="1.5" />
+            <text x="180" y="313" text-anchor="middle" font-family="'Outfit', sans-serif" font-size="10" fill="#c0392b">Isolation</text>
+            
+            <rect x="10" y="150" width="80" height="36" rx="6" fill="#fff0f0" stroke="#c0392b" stroke-width="1.5" />
+            <text x="50" y="173" text-anchor="middle" font-family="'Outfit', sans-serif" font-size="10" fill="#c0392b">More distortion</text>
+            
+            <!-- Arrows -->
+            <path d="M220 60 Q280 90 280 150" fill="none" stroke="#c0392b" stroke-width="1.5" marker-end="url(#arrowRed)" />
+            <path d="M280 186 Q270 260 220 300" fill="none" stroke="#c0392b" stroke-width="1.5" marker-end="url(#arrowRed)" />
+            <path d="M140 300 Q80 260 80 186" fill="none" stroke="#c0392b" stroke-width="1.5" marker-end="url(#arrowRed)" />
+            <path d="M80 150 Q90 90 140 60" fill="none" stroke="#c0392b" stroke-width="1.5" marker-end="url(#arrowRed)" />
+            
+            <defs><marker id="arrowRed" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#c0392b" /></marker></defs>
+            
+            <text x="180" y="176" text-anchor="middle" font-family="'Cormorant Garamond', serif" font-size="12" fill="#c0392b" font-weight="600">Devourer</text>
+            <text x="180" y="192" text-anchor="middle" font-family="'Outfit', sans-serif" font-size="9" fill="#5a5a5a">||D|| > φ</text>
+          </svg>
+          <p class="diagram-caption">The devourer feedback loop: distortion produces rejection, which isolates, which increases distortion. Self-reinforcing closure against Grace.</p>
+        </div>
+
+        <div class="math-insight">
+          <p class="plain-english">Destruction has a mathematical signature. A devourer is any transformation that degrades coherence, violates boundaries, or erases identity persistence. This is formally testable — not a moral judgment but a <strong>structural diagnosis</strong>.</p>
+          <details class="formal-details">
+            <summary>See the formal predicate</summary>
+            <div class="formal-content">
+              <p>A transformation T is a devourer (isDevourer(T, ψ) = true) if any of:</p>
+              <p class="formula">coherence(T(ψ)) &lt; coherence(ψ) — coherence decreases</p>
+              <p class="formula">boundary(T(ψ)) &lt; boundary(ψ) — boundaries are violated</p>
+              <p class="formula">identity(T(ψ)) &lt; identity(ψ) — identity is erased</p>
+              <p>Unitaries (reversible transformations) are <em>never</em> devourers. Projections and zero maps always are. The predicate is computationally verified across the full operator space.</p>
+            </div>
+          </details>
+        </div>
       </section>
 
       <!-- THE PROBLEM OF SUFFERING -->

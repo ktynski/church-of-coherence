@@ -21,52 +21,198 @@
 
       <section class="section reveal">
         <h2>Coherence Formalization</h2>
-        <p>The Coherence framework is formalized in Lean 4. Key components:</p>
+        <p>The Coherence framework is formalized in Lean 4. Here is how the five proof projects connect:</p>
+        
+        <div class="diagram-container diagram-wide">
+          <svg class="formalization-map-svg" viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg">
+            <!-- Project boxes -->
+            <rect class="project-node" x="250" y="20" width="200" height="50" />
+            <text class="project-label" x="350" y="40" font-weight="600">Quantum Gravity</text>
+            <text class="project-label" x="350" y="56" font-size="9" fill="#5a5a5a">Trinity, Grace, φ derivation</text>
+            
+            <rect class="project-node" x="40" y="120" width="180" height="50" />
+            <text class="project-label" x="130" y="140" font-weight="600">ZX-Clifford Bridge</text>
+            <text class="project-label" x="130" y="156" font-size="9" fill="#5a5a5a">Cl(3,1) + ZX-calculus</text>
+            
+            <rect class="project-node" x="480" y="120" width="180" height="50" />
+            <text class="project-label" x="570" y="140" font-weight="600">RH Framework</text>
+            <text class="project-label" x="570" y="156" font-size="9" fill="#5a5a5a">Riemann hypothesis</text>
+            
+            <rect class="project-node" x="120" y="220" width="180" height="50" />
+            <text class="project-label" x="210" y="240" font-weight="600">BSD Conjecture</text>
+            <text class="project-label" x="210" y="256" font-size="9" fill="#5a5a5a">Elliptic curves + coherence</text>
+            
+            <rect class="project-node" x="400" y="220" width="180" height="50" />
+            <text class="project-label" x="490" y="240" font-weight="600">Paper Proofs</text>
+            <text class="project-label" x="490" y="256" font-size="9" fill="#5a5a5a">Exceptional chain, gauge groups</text>
+            
+            <!-- Connectors -->
+            <path class="connector" d="M300 70 L170 120" />
+            <path class="connector" d="M400 70 L530 120" />
+            <path class="connector" d="M170 170 L200 220" />
+            <path class="connector" d="M530 170 L500 220" />
+            <path class="connector" d="M350 70 L350 100 L350 100" />
+          </svg>
+          <p class="diagram-caption">The five Lean projects and their relationships. Quantum Gravity is the foundation; ZX-Clifford bridges to diagram calculus; BSD and RH extend to number theory.</p>
+        </div>
+        
+        <p>Key entry points:</p>
         <ul>
-          <li><strong>Trinity</strong> — Father (closure law), Son (Grace operator), Spirit (coherence witness) in <code>TrinityFSCTF.lean</code></li>
-          <li><strong>Quantum gravity</strong> — Coherence field, curvature from coherence, φ derivation</li>
-          <li><strong>BSD conjecture</strong> — Coherence interpretation of elliptic curves, Selmer groups, Sha</li>
-          <li><strong>Distortion ontology</strong> — Proven in Cl(3,1) with 89 tests</li>
+          <li><a href="formal/lean/quantum_gravity/Foundation/TrinityFSCTF.lean"><strong>TrinityFSCTF.lean</strong></a> — The Trinity formalization. Start here.</li>
+          <li><a href="formal/lean/quantum_gravity/Foundation/PhiDerivation.lean"><strong>PhiDerivation.lean</strong></a> — Why φ is forced, not chosen.</li>
+          <li><a href="formal/lean/zx_clifford/Grace/Simplification.lean"><strong>Grace/Simplification.lean</strong></a> — The Grace operator in Cl(3,1).</li>
+          <li><a href="formal/lean/zx_clifford/Semantics/Generators.lean"><strong>Semantics/Generators.lean</strong></a> — Full Clifford algebra with ZX semantics.</li>
         </ul>
-        <p>The formalization lives in the ParsimoniousFlows repository under <code>submission/lean/</code>.</p>
       </section>
 
-      <section class="section reveal">
-        <h2>Key Concepts</h2>
-        <ul>
-          <li><strong>φ (golden ratio)</strong> — (1 + √5)/2 ≈ 1.618. Universal threshold, love radius φ⁻¹, grace floor φ⁻³.</li>
-          <li><strong>Cl(3,1)</strong> — Clifford algebra of spacetime. Five grades: scalar, vector, bivector, trivector, pseudoscalar.</li>
-          <li><strong>Grace operator</strong> — G = Σₖ φ⁻ᵏ Πₖ. Strict contraction. Recovers any single distortion.</li>
-          <li><strong>Distortion ontology</strong> — Four regimes: privation, productive, critical, terminal. φ is the boundary.</li>
-        </ul>
+      <section class="section glossary reveal" id="glossary">
+        <h2>Glossary of Key Terms</h2>
+        <p>These terms recur throughout the Coherence framework. Each is defined approachably first, then formally.</p>
+        
+        <div class="glossary-grid stagger-children">
+          <div class="glossary-item">
+            <h4 class="glossary-term">φ (Phi — The Golden Ratio)</h4>
+            <p class="glossary-formal">φ = (1 + √5)/2 ≈ 1.618034</p>
+            <p class="glossary-def">The universal threshold. Not chosen but <em>derived</em>: the unique positive solution when you require coherence to scale consistently across all grades. Appears as the critical distortion boundary, the love radius (φ⁻¹ ≈ 0.618), and the grace floor (φ⁻³ ≈ 0.236).</p>
+          </div>
+          
+          <div class="glossary-item">
+            <h4 class="glossary-term">Cl(3,1) — Clifford Algebra</h4>
+            <p class="glossary-formal">16-dimensional algebra with signature (3,1)</p>
+            <p class="glossary-def">The mathematical space where coherence lives. Think of it as a 16-component structure with 5 "grades" (levels of complexity): scalars, vectors, bivectors, trivectors, and pseudoscalars. Each grade represents a different aspect of reality. The spacetime algebra of physics.</p>
+          </div>
+          
+          <div class="glossary-item">
+            <h4 class="glossary-term">Grace Operator (G)</h4>
+            <p class="glossary-formal">G = Σₖ φ⁻ᵏ Πₖ</p>
+            <p class="glossary-def">The transformation that recovers coherence. Grace scales each grade by decreasing powers of 1/φ — preserving scalar truth while gently reducing higher complexity. A strict contraction: apply it repeatedly and distortion approaches zero. Formally, the Son.</p>
+          </div>
+          
+          <div class="glossary-item">
+            <h4 class="glossary-term">Closure Condition (χ = 1)</h4>
+            <p class="glossary-formal">Euler characteristic of the coherence field = 1</p>
+            <p class="glossary-def">The fundamental requirement: reality must cohere. Not a commandment but a structural necessity. If χ ≠ 1, the system is inconsistent — it doesn't hold together. Formally, the Father.</p>
+          </div>
+          
+          <div class="glossary-item">
+            <h4 class="glossary-term">Witness Function (W)</h4>
+            <p class="glossary-formal">W: configurations → {coherent, not-coherent}</p>
+            <p class="glossary-def">The capacity to detect whether a system is coherent. Not subjective judgment but structural recognition. Sound (detects real coherence) and complete (detects all coherence). Formally, the Spirit.</p>
+          </div>
+          
+          <div class="glossary-item">
+            <h4 class="glossary-term">Distortion (D)</h4>
+            <p class="glossary-formal">||D|| measures deviation from coherence</p>
+            <p class="glossary-def">Any departure from the closure condition. Not inherently evil — productive distortion (||D|| < φ) enables growth and differentiation. Terminal distortion (||D|| > φ) becomes a devourer: self-reinforcing, rejecting Grace. The problem of evil is a distortion problem.</p>
+          </div>
+          
+          <div class="glossary-item">
+            <h4 class="glossary-term">Attractor</h4>
+            <p class="glossary-formal">The fixed point where G^n(x) → 0</p>
+            <p class="glossary-def">The coherent state toward which Grace pulls. Not a place but a <em>condition</em>. Different traditions call it Nirvana, Kingdom of God, Moksha, Jannah, the Dao. The mathematics is the same: iterated application of Grace converges to this point.</p>
+          </div>
+          
+          <div class="glossary-item">
+            <h4 class="glossary-term">Love Operator (L)</h4>
+            <p class="glossary-formal">L(x) = G((I+D)x), contraction when ||D|| < φ⁻¹</p>
+            <p class="glossary-def">Relational coherence. Love applies Grace to the space between self and other. The "love radius" φ⁻¹ ≈ 0.618 is the maximum differentiation compatible with coherent relation. Beyond it: alienation. At zero: fusion.</p>
+          </div>
+        </div>
       </section>
 
       <section class="section reveal">
         <h2>Recommended Reading</h2>
-        <p>For those new to the mathematical side:</p>
-        <ul>
-          <li>Clifford algebra introductions (e.g., Lounesto, Hestenes)</li>
-          <li>Amplituhedron and scattering amplitudes (Arkani-Hamed et al.)</li>
-          <li>Golden ratio in nature and mathematics</li>
-        </ul>
-        <p>For the spiritual-philosophical bridge:</p>
-        <ul>
-          <li>Comparative religion and perennial philosophy</li>
-          <li>Theological treatments of Grace (Christian, Hindu bhakti)</li>
-          <li>Buddhist emptiness and dependent origination</li>
-        </ul>
+        
+        <h3>Mathematical Foundations</h3>
+        <div class="book-grid stagger-children">
+          <div class="book-card">
+            <p class="book-title">Clifford Algebras and Spinors</p>
+            <p class="book-author">Pertti Lounesto</p>
+            <p>The definitive reference for Clifford algebras. Covers Cl(3,1) and its relationship to physics. Essential for understanding the algebraic substrate of the Coherence framework.</p>
+          </div>
+          <div class="book-card">
+            <p class="book-title">New Foundations for Classical Mechanics</p>
+            <p class="book-author">David Hestenes</p>
+            <p>Geometric algebra applied to physics. Shows how the Clifford algebra structure naturally describes physical reality — the same insight that underlies the Coherence framework.</p>
+          </div>
+          <div class="book-card">
+            <p class="book-title">Theorem Proving in Lean 4</p>
+            <p class="book-author">Jeremy Avigad et al.</p>
+            <p>The guide to reading and writing Lean 4 proofs. Necessary for engaging with the formal verification directly. Free online.</p>
+          </div>
+        </div>
+        
+        <h3>Spiritual and Philosophical Bridges</h3>
+        <div class="book-grid stagger-children">
+          <div class="book-card">
+            <p class="book-title">The Perennial Philosophy</p>
+            <p class="book-author">Aldous Huxley</p>
+            <p>The classic argument that all religions share a common core. The Coherence framework provides the mathematical structure Huxley intuited but couldn't formalize.</p>
+          </div>
+          <div class="book-card">
+            <p class="book-title">The Tao of Physics</p>
+            <p class="book-author">Fritjof Capra</p>
+            <p>Early exploration of parallels between modern physics and Eastern mysticism. The Coherence framework goes further: not just parallels but shared algebraic structure.</p>
+          </div>
+          <div class="book-card">
+            <p class="book-title">Meditations on the Tarot</p>
+            <p class="book-author">Anonymous (Valentin Tomberg)</p>
+            <p>A profound Christian-Hermetic meditation on archetypal structures. Read alongside the Coherence framework for deep resonance with the Trinity and Grace teachings.</p>
+          </div>
+          <div class="book-card">
+            <p class="book-title">I and Thou</p>
+            <p class="book-author">Martin Buber</p>
+            <p>The philosophical foundation for relational theology. Buber's I-Thou relationship maps directly to the Love operator: coherent relation that preserves both parties.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reveal">
+        <h2>Where to Start</h2>
+        <p>Different backgrounds call for different entry points.</p>
+        
+        <div class="reading-paths stagger-children">
+          <div class="reading-path">
+            <h4>For the Mathematically Curious</h4>
+            <ol>
+              <li><a href="teachings/trinity.html">The Trinity</a> — see the formal structure</li>
+              <li><a href="resources.html#glossary">Glossary</a> — learn the terms</li>
+              <li><a href="formal/lean/quantum_gravity/Foundation/TrinityFSCTF.lean">TrinityFSCTF.lean</a> — read the proof</li>
+              <li><a href="teachings/distortion.html">Distortion Ontology</a> — the theorems</li>
+            </ol>
+          </div>
+          <div class="reading-path">
+            <h4>For the Spiritually Seeking</h4>
+            <ol>
+              <li><a href="index.html">Home</a> — the vision</li>
+              <li><a href="traditions.html">Traditions</a> — find your path</li>
+              <li><a href="practice.html">Practice</a> — start doing</li>
+              <li><a href="teachings/love-triad.html">Love Triad</a> — the relational heart</li>
+            </ol>
+          </div>
+          <div class="reading-path">
+            <h4>For the Skeptic</h4>
+            <ol>
+              <li><a href="faq.html">FAQ</a> — your objections, addressed</li>
+              <li><a href="about.html">About</a> — the origin story</li>
+              <li><a href="teachings/distortion.html">Distortion</a> — the problem of evil</li>
+              <li><a href="formal/lean/quantum_gravity/Foundation/PhiDerivation.lean">PhiDerivation.lean</a> — verify yourself</li>
+            </ol>
+          </div>
+        </div>
       </section>
 
       <section class="section reveal">
         <h2>Open Problems</h2>
-        <p>The Coherence submission includes open problems that extend the framework:</p>
+        <p>The Coherence framework raises as many questions as it answers. Current frontiers:</p>
         <ul>
-          <li>Riemann hypothesis connection</li>
-          <li>Navier-Stokes regularity</li>
-          <li>Distortion ontology (proven)</li>
-          <li>QSNV-Coherence unification</li>
+          <li><strong>Riemann Hypothesis connection</strong> — The RH framework formalizes a bridge between coherence obstruction and the zeros of the zeta function. 50 axioms remain; many are deep number theory.</li>
+          <li><strong>BSD Conjecture scaffold</strong> — Shows that BSD follows from coherence obstruction interpretation plus finiteness of Sha. Structural, not yet a complete proof.</li>
+          <li><strong>Navier-Stokes regularity</strong> — Can coherence conditions prevent singularity formation in fluid dynamics?</li>
+          <li><strong>Full tradition bridges</strong> — Many traditions are not yet covered. Contributions welcome from tradition experts.</li>
+          <li><strong>Computational coherence detection</strong> — Can the witness function be implemented algorithmically? What would a "coherence detector" look like?</li>
         </ul>
-        <p>See <code>submission/open_problems/</code> in the repository.</p>
+        <p>See the <code>formal/</code> directory in this repository for the full formalization.</p>
       </section>
 
       <section class="section cta reveal">

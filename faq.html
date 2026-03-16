@@ -83,6 +83,22 @@
               <li>CKM matrix generation-skipping (φ⁻²)</li>
             </ul>
             <p>All from the <em>same derivation</em>. Not retrofitting.</p>
+            <div class="math-insight" style="margin-top:var(--space-phi);">
+              <p class="plain-english">Here is the derivation in full. Each step is independently verifiable.</p>
+              <details class="formal-details" open>
+                <summary>The five steps</summary>
+                <div class="formal-content">
+                  <p><strong>Step 1 — Local unit:</strong> A null vector n satisfies n·n = 0. The QSNV bivector magnitude is (½)² = ¼. This is geometry, not assumption.</p>
+                  <p><strong>Step 2 — Recursion:</strong> Interactions between adjacent grades satisfy I(k+2) = I(k+1) + I(k). This is the Fibonacci pattern, forced by the algebra.</p>
+                  <p><strong>Step 3 — Scale:</strong> For the pattern to be self-similar across all grades, it must scale as s^k.</p>
+                  <p><strong>Step 4 — Equation:</strong> Combining steps 2 and 3: s^(k+2) = s^(k+1) + s^k. Divide by s^k:</p>
+                  <p class="formula">s² = s + 1</p>
+                  <p><strong>Step 5 — Solution:</strong> By the quadratic formula: s = (1 ± √5)/2. The negative root is ≈ −0.618. Since scaling must be positive, the unique answer is:</p>
+                  <p class="formula">φ = (1 + √5)/2 ≈ 1.618034...</p>
+                  <p>This is not numerology. It is algebra. Formally verified in Lean 4.</p>
+                </div>
+              </details>
+            </div>
           </div>
         </details>
 
